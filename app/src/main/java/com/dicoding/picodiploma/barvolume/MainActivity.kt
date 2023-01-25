@@ -9,8 +9,6 @@ import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
-
-
     private lateinit var edtWidth: EditText
     private lateinit var edtHeight: EditText
     private lateinit var edtLength: EditText
@@ -51,6 +49,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             val inputWidth = edtWidth.text.toString().toDouble()
             val inputHeight = edtHeight.text.toString().toDouble()
 
+            //val volume = inputLength * inputWidth * inputHeight
             val mainViewModel = MainViewModel(MainRepository())
             mainViewModel.save(inputLength, inputWidth, inputHeight)
             val volume = mainViewModel.getVolume()
